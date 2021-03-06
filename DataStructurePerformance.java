@@ -72,8 +72,8 @@ public class DataStructurePerformance {
         }
         write("\n");
 
-        // begin hashmap insert test
-        write("HashMap insert\t");
+        // begin hash map insert test
+        write("Hash map insert\t");
         List<HashMap<Integer, Integer>> mapSlices = new ArrayList<>();
         for (int[] dsSilce : dsSlices) {
             HashMap<Integer, Integer> mapSlice = new HashMap<>(dsSilce.length);
@@ -85,8 +85,8 @@ public class DataStructurePerformance {
         }
         write("\n");
 
-        // begin hashmap find test
-        write("HashMap find\t");
+        // begin hash map find test
+        write("Hash map find\t");
         for (HashMap<Integer, Integer> mapSlice : mapSlices) {
             startTimer();
             for (int i = 0; i < mapSlice.size(); i++)
@@ -95,8 +95,8 @@ public class DataStructurePerformance {
         }
         write("\n");
 
-        // begin hashmap sort test
-        write("HashMap sort\t");
+        // begin hash map sort test
+        write("Hash map sort\t");
         for (HashMap<Integer, Integer> mapSlice : mapSlices) {
             startTimer();
             TreeMap<Integer, Integer> sortedSlice = new TreeMap<Integer, Integer>(mapSlice);
@@ -107,8 +107,8 @@ public class DataStructurePerformance {
         }
         write("\n");
 
-        // begin hashmap delete test
-        write("HashMap delete\t");
+        // begin hash map delete test
+        write("Hash map delete\t");
         for (HashMap<Integer, Integer> mapSlice : mapSlices) {
             startTimer();
             for (int i = 0; i < mapSlice.size(); i++)
@@ -118,7 +118,7 @@ public class DataStructurePerformance {
         write("\n");
 
         // begin TreeSet insert test
-        write("Red-Black Tree insert\t");
+        write("Red-Black tree insert\t");
         List<TreeSet<Integer>> treeSlices = new ArrayList<>();
         for (int[] dsSlice : dsSlices) {
             TreeSet<Integer> treeSlice = new TreeSet<>();
@@ -131,7 +131,7 @@ public class DataStructurePerformance {
         write("\n");
 
         // begin TreeSet find test
-        write("Red-Black Tree find\t");
+        write("Red-Black tree find\t");
         for (TreeSet<Integer> treeSlice : treeSlices) {
             startTimer();
             for (int o = 0; o < treeSlice.size(); o++)
@@ -142,7 +142,7 @@ public class DataStructurePerformance {
         write("\n");
 
         // begin TreeSet sort test
-        write("Red-Black Tree sort\t");
+        write("Red-Black tree sort\t");
         for (TreeSet<Integer> treeSlice : treeSlices) {
             startTimer();
             for (int i = 0; i < treeSlice.size(); i++)
@@ -152,7 +152,7 @@ public class DataStructurePerformance {
         write("\n");
 
         // begin TreeSet delete test
-        write("Red-Black Tree delete\t");
+        write("Red-Black tree delete\t");
         for (TreeSet<Integer> treeSlice : treeSlices) {
             startTimer();
             for (int o = 0; o < treeSlice.size(); o++)
