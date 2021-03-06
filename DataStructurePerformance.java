@@ -1,6 +1,8 @@
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -57,6 +59,8 @@ public class DataStructurePerformance {
 
         // populate the dsSlices array
         System.out.println("\rSlicing the dataset...");
+        SimpleDateFormat df = new SimpleDateFormat("MMM dd, yyyy HH:mm:ss");
+        write(df.format(new Date()) + "\n");
         write("Subset Size\t");
         for (int i = 0; i <= (testMax - testMin) / testStep; i++) { // number of slices
             int[] dsSlice = new int[testMin + (testStep * i)]; // declare this slice
@@ -67,7 +71,6 @@ public class DataStructurePerformance {
             write(testMin + (testStep * i) + "\t");
         }
         write("\n");
-        System.out.println("\rSlicing complete.");
 
         // begin hashmap insert test
         write("HashMap insert\t");
