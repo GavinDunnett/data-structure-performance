@@ -1,6 +1,8 @@
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -57,6 +59,8 @@ public class DataStructurePerformance {
 
         // populate the dsSlices array
         System.out.println("\rSlicing the dataset...");
+        SimpleDateFormat df = new SimpleDateFormat("MMM dd, yyyy HH:mm:ss");
+        write(df.format(new Date()) + "\n");
         write("Subset Size\t");
         for (int i = 0; i <= (testMax - testMin) / testStep; i++) { // number of slices
             int[] dsSlice = new int[testMin + (testStep * i)]; // declare this slice
@@ -67,10 +71,9 @@ public class DataStructurePerformance {
             write(testMin + (testStep * i) + "\t");
         }
         write("\n");
-        System.out.println("\rSlicing complete.");
 
-        // begin hashmap insert test
-        write("HashMap insert\t");
+        // begin hash map insert test
+        write("Hash map insert\t");
         List<HashMap<Integer, Integer>> mapSlices = new ArrayList<>();
         for (int[] dsSilce : dsSlices) {
             HashMap<Integer, Integer> mapSlice = new HashMap<>(dsSilce.length);
@@ -82,8 +85,8 @@ public class DataStructurePerformance {
         }
         write("\n");
 
-        // begin hashmap find test
-        write("HashMap find\t");
+        // begin hash map find test
+        write("Hash map find\t");
         for (HashMap<Integer, Integer> mapSlice : mapSlices) {
             startTimer();
             for (int i = 0; i < mapSlice.size(); i++)
@@ -92,8 +95,8 @@ public class DataStructurePerformance {
         }
         write("\n");
 
-        // begin hashmap sort test
-        write("HashMap sort\t");
+        // begin hash map sort test
+        write("Hash map sort\t");
         for (HashMap<Integer, Integer> mapSlice : mapSlices) {
             startTimer();
             TreeMap<Integer, Integer> sortedSlice = new TreeMap<Integer, Integer>(mapSlice);
@@ -104,8 +107,8 @@ public class DataStructurePerformance {
         }
         write("\n");
 
-        // begin hashmap delete test
-        write("HashMap delete\t");
+        // begin hash map delete test
+        write("Hash map delete\t");
         for (HashMap<Integer, Integer> mapSlice : mapSlices) {
             startTimer();
             for (int i = 0; i < mapSlice.size(); i++)
@@ -115,7 +118,7 @@ public class DataStructurePerformance {
         write("\n");
 
         // begin TreeSet insert test
-        write("Red-Black Tree insert\t");
+        write("Red-Black tree insert\t");
         List<TreeSet<Integer>> treeSlices = new ArrayList<>();
         for (int[] dsSlice : dsSlices) {
             TreeSet<Integer> treeSlice = new TreeSet<>();
@@ -128,7 +131,7 @@ public class DataStructurePerformance {
         write("\n");
 
         // begin TreeSet find test
-        write("Red-Black Tree find\t");
+        write("Red-Black tree find\t");
         for (TreeSet<Integer> treeSlice : treeSlices) {
             startTimer();
             for (int o = 0; o < treeSlice.size(); o++)
@@ -139,7 +142,7 @@ public class DataStructurePerformance {
         write("\n");
 
         // begin TreeSet sort test
-        write("Red-Black Tree sort\t");
+        write("Red-Black tree sort\t");
         for (TreeSet<Integer> treeSlice : treeSlices) {
             startTimer();
             for (int i = 0; i < treeSlice.size(); i++)
@@ -149,7 +152,7 @@ public class DataStructurePerformance {
         write("\n");
 
         // begin TreeSet delete test
-        write("Red-Black Tree delete\t");
+        write("Red-Black tree delete\t");
         for (TreeSet<Integer> treeSlice : treeSlices) {
             startTimer();
             for (int o = 0; o < treeSlice.size(); o++)
