@@ -60,8 +60,8 @@ public class DataStructurePerformance {
         // populate the dsSlices array
         System.out.println("\rSlicing the dataset...");
         SimpleDateFormat df = new SimpleDateFormat("MMM dd, yyyy HH:mm:ss");
-        write(df.format(new Date()) + "\n");
-        write("Subset Size\t");
+        write("Test date: " + df.format(new Date()) + "\n");
+        write("Size (million)\t");
         for (int i = 0; i <= (testMax - testMin) / testStep; i++) { // number of slices
             int[] dsSlice = new int[testMin + (testStep * i)]; // declare this slice
             for (int j = 0; j < testMin + (testStep * i); j++) { // size of this slice
@@ -118,7 +118,7 @@ public class DataStructurePerformance {
         write("\n");
 
         // begin TreeSet insert test
-        write("Red-Black tree insert\t");
+        write("Red-Black insert\t");
         List<TreeSet<Integer>> treeSlices = new ArrayList<>();
         for (int[] dsSlice : dsSlices) {
             TreeSet<Integer> treeSlice = new TreeSet<>();
@@ -131,7 +131,7 @@ public class DataStructurePerformance {
         write("\n");
 
         // begin TreeSet find test
-        write("Red-Black tree find\t");
+        write("Red-Black find\t");
         for (TreeSet<Integer> treeSlice : treeSlices) {
             startTimer();
             for (int o = 0; o < treeSlice.size(); o++)
@@ -142,7 +142,7 @@ public class DataStructurePerformance {
         write("\n");
 
         // begin TreeSet sort test
-        write("Red-Black tree sort\t");
+        write("Red-Black sort\t");
         for (TreeSet<Integer> treeSlice : treeSlices) {
             startTimer();
             for (int i = 0; i < treeSlice.size(); i++)
